@@ -10,6 +10,116 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo-180.png">
+
+    <style>
+        /* --- Ajouts: logo & moyens de paiement --- */
+        .logo-icon-img {
+            height: 40px;
+            width: 40px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .footer-logo-img {
+            height: 44px;
+            width: 44px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .footer-payments {
+            margin-top: 16px;
+        }
+        .footer-payments-label {
+            display: block;
+            font-size: 0.85rem;
+            opacity: 0.75;
+            margin-bottom: 8px;
+        }
+        .footer-payments-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .payment-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity .2s, transform .2s;
+        }
+        .payment-chip:hover { opacity: 1; transform: translateY(-2px); }
+        .payment-airtel { border-color: #E4002B; }
+        .payment-moov { border-color: #0072CE; }
+        .payment-paypal { border-color: #003087; }
+
+        .payments {
+            padding: 80px 0;
+            background: #f8f9fb;
+        }
+        .payments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .payment-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 20px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .payment-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+        }
+        .payment-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .payment-icon-airtel { background: #E4002B; }
+        .payment-icon-moov { background: #0072CE; }
+        .payment-icon-paypal { background: #003087; }
+        .payment-value {
+            font-weight: 700;
+            margin: 4px 0;
+        }
+        .payment-note {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,7 +127,7 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <span class="logo-icon">📄</span>
+                <img src="logo.png" alt="GRACEMJ" class="logo-icon-img">
                 <span class="logo-text">GRACE<span class="highlight">MJ</span></span>
             </a>
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -28,6 +138,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pourquoi">Pourquoi nous</a></li>
                 <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#paiement">Paiement</a></li>
                 <li><a href="#contact" class="btn btn-nav">Contactez-moi</a></li>
             </ul>
         </div>
@@ -252,6 +363,37 @@
         </div>
     </section>
 
+    <!-- Payment Methods Section -->
+    <section class="payments" id="paiement">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Paiement</span>
+                <h2>Moyens de <span class="highlight">paiement</span> acceptés</h2>
+                <p>Payez facilement et en toute sécurité via le moyen de votre choix</p>
+            </div>
+            <div class="payments-grid">
+                <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20payer%20par%20Airtel%20Money" target="_blank" class="payment-card">
+                    <div class="payment-icon payment-icon-airtel"><i class="fas fa-mobile-screen-button"></i></div>
+                    <h4>Airtel Money</h4>
+                    <p class="payment-value">077 24 40 83</p>
+                    <p class="payment-note">Paiement mobile rapide et sécurisé</p>
+                </a>
+                <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20payer%20par%20Moov%20Money%20(Mobicash)" target="_blank" class="payment-card">
+                    <div class="payment-icon payment-icon-moov"><i class="fas fa-mobile-screen-button"></i></div>
+                    <h4>Moov Money (Mobicash)</h4>
+                    <p class="payment-value">077 24 40 83</p>
+                    <p class="payment-note">Paiement mobile rapide et sécurisé</p>
+                </a>
+                <a href="https://www.paypal.me/gracejourdain" target="_blank" class="payment-card">
+                    <div class="payment-icon payment-icon-paypal"><i class="fab fa-paypal"></i></div>
+                    <h4>PayPal</h4>
+                    <p class="payment-value">gracejourdain</p>
+                    <p class="payment-note">Idéal pour les paiements internationaux</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -307,13 +449,25 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <span class="logo-text">GRACE<span class="highlight">MJ</span></span>
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="GRACEMJ" class="footer-logo-img">
+                        <span class="logo-text">GRACE<span class="highlight">MJ</span></span>
+                    </div>
                     <p>Votre partenaire pour un CV professionnel qui ouvre les portes du succès.</p>
+                    <div class="footer-payments">
+                        <span class="footer-payments-label">Paiement accepté :</span>
+                        <div class="footer-payments-icons">
+                            <span class="payment-chip payment-airtel"><i class="fas fa-mobile-screen-button"></i> Airtel Money</span>
+                            <span class="payment-chip payment-moov"><i class="fas fa-mobile-screen-button"></i> Moov Money</span>
+                            <a href="https://www.paypal.me/gracejourdain" target="_blank" class="payment-chip payment-paypal"><i class="fab fa-paypal"></i> PayPal</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <a href="#accueil">Accueil</a>
                     <a href="#services">Services</a>
                     <a href="#tarifs">Tarifs</a>
+                    <a href="#paiement">Paiement</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
