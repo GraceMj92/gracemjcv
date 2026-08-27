@@ -825,7 +825,7 @@ section {
 }
 
 .product-card:hover .product-img {
-    opacity: 0;
+    transform: scale(1.05);
 }
 
 .product-card:hover .product-img-hover {
