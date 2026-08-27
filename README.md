@@ -1,54 +1,59 @@
-# GRACEMJ — Création & Amélioration de CV Professionnels
+# 💇‍♀️ Charlyz Hair by GraceMJ
 
-Site web vitrine pour le service de création et d'amélioration de CV professionnels GRACEMJ.
+> **Révèle ta couronne** 👑
 
-## 🚀 Déploiement sur GitHub Pages
+Boutique en ligne de perruques de qualité supérieure, basée à **Franceville, Gabon**.
 
-### Étape 1 : Créer un dépôt GitHub
-1. Allez sur [github.com/new](https://github.com/new)
-2. Nommez le dépôt : `gracemj-cv` (ou le nom de votre choix)
-3. Laissez-le en **Public**
-4. Cliquez sur **Create repository**
+## 🌐 Site Web
 
-### Étape 2 : Pousser le code
-```bash
-cd gracemj-cv-site
-git init
-git add .
-git commit -m "Premier déploiement du site GRACEMJ"
-git branch -M main
-git remote add origin https://github.com/VOTRE_USERNAME/gracemj-cv.git
-git push -u origin main
-```
-
-### Étape 3 : Activer GitHub Pages
-1. Allez dans **Settings** > **Pages** de votre dépôt
-2. Sous **Source**, sélectionnez **Deploy from a branch**
-3. Choisissez la branche **main** et le dossier **/ (root)**
-4. Cliquez sur **Save**
-
-Votre site sera accessible à : `https://VOTRE_USERNAME.github.io/gracemj-cv/`
-
-## 📁 Structure du projet
-
-```
-gracemj-cv-site/
-├── index.html    ← Page principale
-├── style.css     ← Styles (thème bleu marine & or)
-├── script.js     ← Animations et interactivité
-└── README.md     ← Ce fichier
-```
+Visitez : [https://gracemj92.github.io/](https://gracemj92.github.io/)
 
 ## ✨ Fonctionnalités
 
-- Design responsive (mobile, tablette, desktop)
-- Bouton WhatsApp flottant
-- Animations au scroll
-- Menu mobile hamburger
-- Liens de contact directs (WhatsApp, téléphone, email)
-- Tarifs clairement présentés
+- 🛒 Catalogue de perruques avec filtres (catégorie, taille, prix)
+- 🛍️ Panier d'achat avec sauvegarde locale
+- 📱 Commande directe via WhatsApp
+- 💰 Paiements : Airtel Money, Moov Money, PayPal
+- 📐 Guide des tailles (10" à 40") avec prix
+- 📱 Design 100% responsive (mobile, tablette, desktop)
+- ⭐ Témoignages clients
+- 🔍 Recherche de produits
+
+## 💳 Moyens de Paiement
+
+| Moyen | Détails |
+|---|---|
+| Airtel Money | 077 24 40 83 |
+| Moov Money | 077 24 40 83 |
+| PayPal | [paypal.me/gracejourdain](https://www.paypal.me/gracejourdain) |
 
 ## 📞 Contact
 
-- **WhatsApp / Téléphone** : 077 24 40 83
+- **WhatsApp** : [077 24 40 83](https://wa.me/24177244083)
 - **Email** : gracemjdjibril@gmail.com
+- **Blog** : [GraceMJ Blog](https://gracemj92.github.io/gracemjcv/)
+
+## 🚀 Déploiement sur GitHub Pages
+
+1. Créez un repo `gracemj92.github.io` sur GitHub
+2. Uploadez tous les fichiers de ce dossier
+3. Activez GitHub Pages dans les paramètres du repo
+4. Votre site sera disponible à `https://gracemj92.github.io/`
+
+## 📁 Structure
+
+```
+├── index.html              # Page principale
+├── style.css               # Styles CSS responsive
+├── script.js               # JavaScript (panier, filtres, etc.)
+├── charlyz-hair-logo.jpg   # Logo Charlyz Hair (JPG)
+├── charlyz-hair-logo.png   # Logo Charlyz Hair (PNG)
+├── logo.png                # Logo GraceMJ
+├── logo.jpg                # Logo GraceMJ (JPG)
+├── favicon.ico             # Favicon
+└── README.md               # Ce fichier
+```
+
+## 📝 Licence
+
+© 2025 Charlyz Hair by GraceMJ — Tous droits réservés
