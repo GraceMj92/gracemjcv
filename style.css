@@ -1556,20 +1556,22 @@ section {
 .cart-sidebar {
     position: fixed;
     top: 0;
-    right: -400px;
+    right: 0;
     width: 100%;
     max-width: 400px;
     height: 100%;
+    overflow-x: hidden;
     background-color: var(--white);
     z-index: var(--z-modal);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    transition: right var(--transition-normal);
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
     display: flex;
     flex-direction: column;
 }
 
 .cart-sidebar.active {
-    right: 0;
+    transform: translateX(0);
 }
 
 .cart-header {
@@ -2718,7 +2720,7 @@ body.no-scroll { overflow: hidden; }
 
     .nav-links {
         position: fixed;
-        top: 0; right: -100%;
+        top: 0; right: 0;
         width: 82%; max-width: 340px; height: 100vh;
         background-color: var(--white);
         flex-direction: column;
@@ -2726,11 +2728,13 @@ body.no-scroll { overflow: hidden; }
         padding: 100px var(--spacing-xl) var(--spacing-xl);
         gap: 0;
         box-shadow: var(--shadow-xl);
-        transition: right var(--transition-normal);
-        z-index: 999;
+        overflow-x: hidden;
         overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform var(--transition-normal);
+        z-index: 999;
     }
-    .nav-links.active { right: 0; }
+    .nav-links.active { transform: translateX(0); }
     .nav-links a {
         color: var(--gray-800) !important;
         width: 100%;
@@ -2763,11 +2767,19 @@ body.no-scroll { overflow: hidden; }
    CORRECTIONS RESPONSIVE APPROFONDIES (mobile réel)
    ========================================================================== */
 
-/* Toutes les images sont fluides par défaut */
-img { max-width: 100%; height: auto; display: block; }
+/* Toutes les images et vidéos sont fluides par défaut */
+img, video { max-width: 100%; height: auto; display: block; }
 
 /* Garde-fou : aucun débordement horizontal nulle part (fin du "glisser") */
-html, body { overflow-x: hidden; width: 100%; }
+html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
+
+/* Les enfants de grille/flex ne doivent jamais forcer leur conteneur à
+   s'élargir à cause de leur contenu (vidéos, texte long, etc.) */
+.products-grid > *, .categories-grid > *, .media-videos > *,
+.payments-grid > *, .contact-grid > *, .footer-content > *,
+.hero-highlights > *, .about-values > * {
+    min-width: 0;
+}
 
 @media (max-width: 1024px) {
     html { font-size: 15px; }
