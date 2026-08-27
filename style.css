@@ -2830,7 +2830,8 @@ body.no-scroll { overflow: hidden; }
     .nav-links .blog-link { justify-content: center; border-bottom: none; margin-top: var(--spacing-sm); }
     .nav-toggle { display: flex; }
 
-    .categories-grid { grid-template-columns: 1fr 1fr; }
+    .categories-grid { grid-template-columns: 1fr; }
+    .category-card { max-width: 400px; margin: 0 auto; width: 100%; }
     .products-grid { grid-template-columns: 1fr; }
     .filters-bar { flex-direction: column; align-items: stretch; }
     .filter-search input { min-width: 0; width: 100%; }
@@ -3030,8 +3031,9 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     .testimonial-text { font-size: 0.82rem; line-height: 1.5; }
     .testimonial-author h5 { font-size: 0.8rem; }
 
-    /* CatÃ©gories : deux par ligne sur trÃ¨s petit Ã©cran */
-    .categories-grid { grid-template-columns: 1fr 1fr; gap: var(--spacing-sm); }
+    /* CatÃ©gories : UN SEUL cadre par ligne, centrÃ©, pleine largeur comme dans la boutique */
+    .categories-grid { grid-template-columns: 1fr; gap: var(--spacing-md); }
+    .category-card { max-width: 400px; margin: 0 auto; width: 100%; }
 
     /* Galerie mÃ©dia : vidÃ©os en colonne unique, mais TOUJOURS visibles */
     .media-videos { grid-template-columns: 1fr !important; }
@@ -3064,5 +3066,45 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     /* Pas de dÃ©bordement horizontal */
     .media-gallery, .media-gallery-grid, .media-videos, .media-photo, .media-video {
         overflow-x: hidden;
+    }
+}
+
+/* ==========================================================================
+   CORRECTIONS FINALES — Catégories + Galerie média sur mobile
+   ========================================================================== */
+
+/* CRITIQUE : scroll-reveal reste à opacity:0 si l'IntersectionObserver
+   ne se déclenche pas (section avec hauteur nulle sur mobile).
+   On force la visibilité de la galerie média et de ses enfants. */
+@media (max-width: 1024px) {
+    .media-gallery.scroll-reveal,
+    .media-gallery .scroll-reveal,
+    .media-gallery-grid.scroll-reveal,
+    .media-photo.scroll-reveal,
+    .media-videos.scroll-reveal,
+    .media-video.scroll-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Si un parent scroll-reveal contient la galerie, on le force visible */
+    .scroll-reveal:has(.media-gallery),
+    .scroll-reveal:has(.media-gallery-grid),
+    .scroll-reveal:has(.media-photo),
+    .scroll-reveal:has(.media-video) {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Catégories : UN SEUL cadre par ligne, centré, pleine largeur
+       comme dans la boutique (products-grid = 1fr sur mobile) */
+    .categories-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-md);
+    }
+    .category-card {
+        max-width: 400px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
     }
 }
