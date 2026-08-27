@@ -3,457 +3,703 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRACEMJ — Création & Amélioration de CV Professionnels</title>
-    <meta name="description" content="Boostez votre avenir avec un CV professionnel, structuré et percutant. Création et amélioration de CV par GRACEMJ.">
+    <title>Charlyz Hair by GraceMJ — Perruques de qualité à Franceville, Gabon</title>
+    <meta name="description" content="Charlyz Hair by GraceMJ — Boutique en ligne de perruques de qualité à Franceville, Gabon. Cheveux naturels, synthétiques, Lace Front. Livraison à Franceville. Paiement Airtel Money, Moov Money, PayPal.">
+    <meta name="keywords" content="perruques, wigs, Franceville, Gabon, cheveux naturels, lace front, full lace, Charlyz Hair, GraceMJ">
+    <meta name="author" content="GraceMJ">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Charlyz Hair by GraceMJ — Perruques de qualité">
+    <meta property="og:description" content="Boutique en ligne de perruques de qualité à Franceville, Gabon. Révèle ta couronne !">
+    <meta property="og:image" content="charlyz-hair-logo.png">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="logo-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="logo-180.png">
 
-    <style>
-        /* --- Ajouts: logo & moyens de paiement --- */
-        .logo-icon-img {
-            height: 40px;
-            width: 40px;
-            object-fit: contain;
-            border-radius: 50%;
-            background: #fff;
-        }
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
-        }
-        .footer-logo-img {
-            height: 44px;
-            width: 44px;
-            object-fit: contain;
-            border-radius: 50%;
-            background: #fff;
-        }
-        .footer-payments {
-            margin-top: 16px;
-        }
-        .footer-payments-label {
-            display: block;
-            font-size: 0.85rem;
-            opacity: 0.75;
-            margin-bottom: 8px;
-        }
-        .footer-payments-icons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .payment-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.8rem;
-            padding: 6px 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(255,255,255,0.25);
-            color: inherit;
-            text-decoration: none;
-            opacity: 0.9;
-            transition: opacity .2s, transform .2s;
-        }
-        .payment-chip:hover { opacity: 1; transform: translateY(-2px); }
-        .payment-airtel { border-color: #E4002B; }
-        .payment-moov { border-color: #0072CE; }
-        .payment-paypal { border-color: #003087; }
-
-        .payments {
-            padding: 80px 0;
-            background: #f8f9fb;
-        }
-        .payments-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
-        }
-        .payment-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background: #fff;
-            border-radius: 16px;
-            padding: 32px 20px;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: transform .25s ease, box-shadow .25s ease;
-        }
-        .payment-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
-        }
-        .payment-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            color: #fff;
-            margin-bottom: 16px;
-        }
-        .payment-icon-airtel { background: #E4002B; }
-        .payment-icon-moov { background: #0072CE; }
-        .payment-icon-paypal { background: #003087; }
-        .payment-value {
-            font-weight: 700;
-            margin: 4px 0;
-        }
-        .payment-note {
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- ======================== NAVIGATION ======================== -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="logo.png" alt="GRACEMJ" class="logo-icon-img">
-                <span class="logo-text">GRACE<span class="highlight">MJ</span></span>
+                <img src="charlyz-hair-logo.png" alt="Charlyz Hair" class="logo-icon-img">
+                <span class="logo-text">CHARLYZ<span class="highlight"> HAIR</span></span>
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pourquoi">Pourquoi nous</a></li>
+                <li><a href="#boutique">Boutique</a></li>
                 <li><a href="#tarifs">Tarifs</a></li>
                 <li><a href="#paiement">Paiement</a></li>
-                <li><a href="#contact" class="btn btn-nav">Contactez-moi</a></li>
+                <li><a href="#apropos">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://gracemj92.github.io/gracemjcv/" target="_blank" class="blog-link"><i class="fas fa-blog"></i> Blog</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartBtn" aria-label="Panier">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ======================== HERO SECTION ======================== -->
     <section class="hero" id="accueil">
         <div class="hero-bg-shapes">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
             <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
         </div>
         <div class="container hero-container">
-            <div class="hero-content">
-                <p class="hero-badge">🚀 Boostez votre avenir</p>
+            <div class="hero-content scroll-reveal">
+                <p class="hero-badge">Révèle ta couronne</p>
                 <h1>
-                    <span class="hero-line-1">Création</span>
-                    <span class="hero-line-2">& Amélioration</span>
-                    <span class="hero-line-3">de CV <span class="highlight">Professionnels</span></span>
+                    <span class="hero-line-1">Les plus belles</span>
+                    <span class="hero-line-2"><span class="highlight">Perruques</span></span>
+                    <span class="hero-line-3">livrées à <span class="highlight">Franceville</span></span>
                 </h1>
                 <p class="hero-subtitle">
-                    Votre CV, votre premier pas vers le succès ! Un CV bien rédigé ouvre les portes des opportunités. 
-                    Démarquez-vous avec un CV professionnel, structuré et percutant.
+                    Cheveux naturels, Lace Front indétectable, Full Lace sur-mesure : chaque perruque
+                    Charlyz Hair est sélectionnée à la main pour un rendu impeccable. Une seule promesse —
+                    vous faire sentir irrésistible, du premier regard au dernier détail.
                 </p>
                 <div class="hero-cta">
-                    <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20am%C3%A9liorer%20mon%20CV" class="btn btn-primary btn-lg" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Commander mon CV
+                    <a href="#boutique" class="btn btn-primary btn-lg">
+                        <i class="fas fa-gem"></i> Découvrir la collection
                     </a>
-                    <a href="#tarifs" class="btn btn-outline btn-lg">
-                        Voir les tarifs
+                    <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20d%C3%A9couvrir%20vos%20perruques" class="btn btn-whatsapp btn-lg" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Nous contacter
                     </a>
                 </div>
-                <div class="hero-guarantee">
-                    <div class="guarantee-badge">
-                        <i class="fas fa-award"></i>
-                        <span>CV Professionnel — <strong>Résultat Garanti</strong></span>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <i class="fas fa-truck-fast"></i>
+                        <span>Livraison à Franceville</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>Qualité 100% garantie</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-star"></i>
+                        <span>+200 clientes conquises</span>
                     </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="cv-mockup">
-                    <div class="cv-card cv-card-back">
-                        <div class="cv-header-mock"></div>
-                        <div class="cv-line-mock w80"></div>
-                        <div class="cv-line-mock w60"></div>
-                        <div class="cv-line-mock w90"></div>
-                        <div class="cv-line-mock w40"></div>
+            <div class="hero-visual scroll-reveal">
+                <div class="hero-image-container">
+                    <div class="hero-logo-panel">
+                        <img src="charlyz-hair-logo.png" alt="Charlyz Hair by GraceMJ" class="hero-logo-img">
                     </div>
-                    <div class="cv-card cv-card-front">
-                        <div class="cv-sidebar-mock">
-                            <div class="cv-avatar-mock"></div>
-                            <div class="cv-line-mock-light w80"></div>
-                            <div class="cv-line-mock-light w60"></div>
-                            <div class="cv-line-mock-light w90"></div>
-                        </div>
-                        <div class="cv-main-mock">
-                            <div class="cv-name-mock"></div>
-                            <div class="cv-title-mock"></div>
-                            <div class="cv-section-mock">
-                                <div class="cv-line-mock w90"></div>
-                                <div class="cv-line-mock w70"></div>
-                                <div class="cv-line-mock w80"></div>
-                            </div>
-                            <div class="cv-section-mock">
-                                <div class="cv-line-mock w60"></div>
-                                <div class="cv-line-mock w90"></div>
-                            </div>
-                        </div>
+                    <div class="hero-float-badge badge-top">
+                        <i class="fas fa-gem"></i>
+                        <span>Premium</span>
+                    </div>
+                    <div class="hero-float-badge badge-bottom">
+                        <span class="price-tag">À partir de 82 500 FCFA</span>
+                    </div>
+                </div>
+                <div class="hero-highlights">
+                    <div class="hero-highlight-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Paiement sécurisé</span>
+                    </div>
+                    <div class="hero-highlight-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Conseil personnalisé</span>
+                    </div>
+                    <div class="hero-highlight-item">
+                        <i class="fas fa-box"></i>
+                        <span>Livraison discrète</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- ======================== CATEGORIES ======================== -->
+    <section class="categories" id="categories">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Nos Services</span>
-                <h2>Des CV qui font la <span class="highlight">différence</span></h2>
-                <p>Nous vous accompagnons pour créer ou améliorer votre CV selon vos besoins</p>
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Nos Catégories</span>
+                <h2>Trouvez la perruque <span class="highlight">parfaite</span></h2>
+                <p>Explorez notre large gamme de perruques pour chaque style et chaque occasion</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-circle-plus"></i>
+            <div class="categories-grid scroll-reveal">
+                <div class="category-card" data-category="naturel">
+				<img src="wig-lace-front-ondulee.jpg" alt="Collection de perruques Charlyz Hair" loading="lazy">
+                    <!--<img src="https://picsum.photos/300/300?random=101" alt="Cheveux Naturels" loading="lazy-->
+                    <div class="category-overlay">
+                        <h3>Cheveux Naturels</h3>
+                        <p>Qualité premium 100% humains</p>
                     </div>
-                    <h3>Création de CV</h3>
-                    <p>Un CV unique, professionnel et adapté à votre profil et à votre domaine. Nous créons votre CV de zéro avec un design moderne et percutant.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Design personnalisé</li>
-                        <li><i class="fas fa-check"></i> Adapté à votre secteur</li>
-                        <li><i class="fas fa-check"></i> Français ou Anglais</li>
-                    </ul>
                 </div>
-                <div class="service-card featured">
-                    <div class="service-badge">Populaire</div>
-                    <div class="service-icon">
-                        <i class="fas fa-wand-magic-sparkles"></i>
+                <div class="category-card" data-category="synthetique">
+                    <img src="wig-beach-waves.jpg" alt="Collection de perruques Charlyz Hair" loading="lazy">
+                    <div class="category-overlay">
+                        <h3>Synthétiques</h3>
+                        <p>Beauté accessible et durable</p>
                     </div>
-                    <h3>Amélioration de CV</h3>
-                    <p>Nous optimisons, structurons et valorisons votre CV pour attirer l'attention des recruteurs. Transformez votre CV existant en outil puissant.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Restructuration complète</li>
-                        <li><i class="fas fa-check"></i> Mise en valeur des compétences</li>
-                        <li><i class="fas fa-check"></i> Optimisation ATS</li>
-                    </ul>
+                </div>
+                <div class="category-card" data-category="lace-front">
+                    <img src="wig-lace-front-ondulee.jpg" alt="Collection de perruques Charlyz Hair" loading="lazy">
+                    <div class="category-overlay">
+                        <h3>Lace Front</h3>
+                        <p>Ligne frontale naturelle</p>
+                    </div>
+                </div>
+                <div class="category-card" data-category="full-lace">
+                    <img src="wig-beach-waves.jpg" alt="Collection de perruques Charlyz Hair" loading="lazy">
+                    <div class="category-overlay">
+                        <h3>Full Lace</h3>
+                        <p>Polyvalence et confort total</p>
+                    </div>
+                </div>
+                <div class="category-card" data-category="ondule">
+                    <img src="wig-beach-waves.jpg" alt="Collection de perruques Charlyz Hair" loading="lazy">
+                    <div class="category-overlay">
+                        <h3>Ondulées</h3>
+                        <p>Vagues élégantes et douces</p>
+                    </div>
+                </div>
+                <div class="category-card" data-category="lisse">
+				<img src="wig-lace-front-ondulee.jpg" alt="Collection de perruques Charlyz Hair" loading="lazy">
+                    <!--<img src="https://picsum.photos/300/300?random=106" alt="Lisses" loading="lazy">-->
+                    <div class="category-overlay">
+                        <h3>Lisses</h3>
+                        <p>Brillance et sophistication</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Us Section -->
-    <section class="why-us" id="pourquoi">
+    <!-- ======================== BOUTIQUE (SHOP) ======================== -->
+    <section class="shop" id="boutique">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Pourquoi nous</span>
-                <h2>Pourquoi me faire <span class="highlight">confiance</span> ?</h2>
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Notre Boutique</span>
+                <h2>Notre <span class="highlight">Collection</span></h2>
+                <p>Des perruques de qualité pour toutes les occasions</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
-                    <h4>CV ciblé et adapté</h4>
-                    <p>Adapté à votre domaine et au poste visé</p>
+
+            <!-- Filters Bar -->
+            <div class="filters-bar scroll-reveal">
+                <div class="filter-group">
+                    <div class="filter-item">
+                        <label for="filter-category">Catégorie</label>
+                        <select id="filter-category">
+                            <option value="all">Toutes</option>
+                            <option value="naturel">Cheveux Naturels</option>
+                            <option value="synthetique">Synthétiques</option>
+                            <option value="lace-front">Lace Front</option>
+                            <option value="full-lace">Full Lace</option>
+                            <option value="ondule">Ondulées</option>
+                            <option value="lisse">Lisses</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="filter-size">Taille</label>
+                        <select id="filter-size">
+                            <option value="all">Toutes</option>
+                            <option value="10">10"</option>
+                            <option value="12">12"</option>
+                            <option value="14">14"</option>
+                            <option value="16">16"</option>
+                            <option value="18">18"</option>
+                            <option value="20">20"</option>
+                            <option value="22">22"</option>
+                            <option value="24">24"</option>
+                            <option value="26">26"</option>
+                            <option value="28">28"</option>
+                            <option value="30">30"</option>
+                            <option value="32">32"</option>
+                            <option value="34">34"</option>
+                            <option value="36">36"</option>
+                            <option value="38">38"</option>
+                            <option value="40">40"</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="filter-sort">Trier par</label>
+                        <select id="filter-sort">
+                            <option value="popular">Popularité</option>
+                            <option value="price-asc">Prix croissant</option>
+                            <option value="price-desc">Prix décroissant</option>
+                            <option value="name">Nom A-Z</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-pen-nib"></i></div>
-                    <h4>Rédaction professionnelle</h4>
-                    <p>Un contenu soigné et impactant</p>
+                <div class="filter-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Rechercher une perruque...">
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-gem"></i></div>
-                    <h4>Mise en valeur</h4>
-                    <p>Vos compétences mises en avant</p>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products rendered by JavaScript -->
+            </div>
+
+            <!-- No results -->
+            <div class="no-results" id="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>Aucun résultat trouvé</h3>
+                <p>Essayez de modifier vos filtres ou votre recherche</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== GALERIE MÉDIA (photo stock + vidéos) ======================== -->
+    <section class="media-gallery">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">En images</span>
+                <h2>Notre <span class="highlight">stock</span> en vrai</h2>
+                <p class="section-subtitle">Pas de catalogue générique : voici nos perruques, telles qu'elles arrivent en boutique.</p>
+            </div>
+            <div class="media-gallery-grid scroll-reveal">
+                <div class="media-photo">
+                    <img src="wig-beach-waves - Copy.jpg" alt="Collection de perruques Charlyz Hair" loading="lazy">
+                    <span class="media-caption">Notre stock fraîchement réceptionné</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                    <h4>Livraison rapide</h4>
-                    <p>Un service rapide et soigné</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
-                    <h4>Confidentialité</h4>
-                    <p>Vos données sont 100% confidentielles</p>
+                <div class="media-videos">
+                    <div class="media-video">
+                        <video src="video-perruque-1.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-2.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-3.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-1.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-2.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-3.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-1.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-2.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-3.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-1.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-2.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="media-video">
+                        <video src="video-perruque-3.mp4" controls playsinline preload="metadata"></video>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="tarifs">
+    <!-- ======================== GUIDE DES TAILLES & PRIX ======================== -->
+    <section class="price-guide" id="tarifs">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-reveal">
                 <span class="section-tag">Tarifs</span>
-                <h2>Des prix <span class="highlight">accessibles</span></h2>
-                <p>Choisissez la formule qui correspond à vos besoins</p>
+                <h2>Guide des <span class="highlight">tailles & prix</span></h2>
+                <p>Nos prix varient selon la longueur de la perruque — plus elle est longue, plus elle est luxueuse !</p>
             </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Création de CV</h3>
-                        <p class="pricing-desc">Français ou Anglais</p>
-                    </div>
-                    <div class="pricing-price">
-                        <span class="price">5 000</span>
-                        <span class="currency">FCFA</span>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> CV créé de zéro</li>
-                        <li><i class="fas fa-check"></i> Design professionnel</li>
-                        <li><i class="fas fa-check"></i> 1 langue au choix</li>
-                        <li><i class="fas fa-check"></i> Format PDF</li>
-                        <li><i class="fas fa-check"></i> 1 révision incluse</li>
-                    </ul>
-                    <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20une%20cr%C3%A9ation%20de%20CV%20(5000%20FCFA)" class="btn btn-outline btn-block" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Commander
-                    </a>
-                </div>
-                <div class="pricing-card popular">
-                    <div class="popular-badge">Meilleur choix</div>
-                    <div class="pricing-header">
-                        <h3>Création de CV</h3>
-                        <p class="pricing-desc">Français + Anglais</p>
-                    </div>
-                    <div class="pricing-price">
-                        <span class="price">10 000</span>
-                        <span class="currency">FCFA</span>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> CV créé de zéro</li>
-                        <li><i class="fas fa-check"></i> Design professionnel</li>
-                        <li><i class="fas fa-check"></i> 2 langues incluses</li>
-                        <li><i class="fas fa-check"></i> Format PDF</li>
-                        <li><i class="fas fa-check"></i> 2 révisions incluses</li>
-                    </ul>
-                    <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20une%20cr%C3%A9ation%20de%20CV%20bilingue%20(10000%20FCFA)" class="btn btn-primary btn-block" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Commander
-                    </a>
-                </div>
-                <div class="pricing-card urgent">
-                    <div class="urgent-icon"><i class="fas fa-clock"></i></div>
-                    <div class="pricing-header">
-                        <h3>Service Urgence</h3>
-                        <p class="pricing-desc">Prioritaire</p>
-                    </div>
-                    <div class="pricing-price">
-                        <span class="price">20 000</span>
-                        <span class="currency">FCFA</span>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Création ou amélioration</li>
-                        <li><i class="fas fa-check"></i> Traitement prioritaire</li>
-                        <li><i class="fas fa-check"></i> Livraison express</li>
-                        <li><i class="fas fa-check"></i> Révisions illimitées</li>
-                        <li><i class="fas fa-check"></i> Support dédié</li>
-                    </ul>
-                    <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20le%20service%20urgence%20(20000%20FCFA)" class="btn btn-urgent btn-block" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Commander
-                    </a>
-                </div>
+            <div class="price-table-container scroll-reveal">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Taille (pouces)</th>
+                            <th>Longueur approx.</th>
+                            <th>Prix (FCFA)</th>
+                            <th>Commander</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="size-badge">10"</span></td>
+                            <td>~25 cm (menton)</td>
+                            <td class="price-cell">82 500 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2010%22%20%C3%A0%2082%20500%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">12"</span></td>
+                            <td>~30 cm (épaules)</td>
+                            <td class="price-cell">110 000 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2012%22%20%C3%A0%20110%20000%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">14"</span></td>
+                            <td>~35 cm (haut du dos)</td>
+                            <td class="price-cell">137 500 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2014%22%20%C3%A0%20137%20500%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">16"</span></td>
+                            <td>~40 cm (milieu du dos)</td>
+                            <td class="price-cell">165 000 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2016%22%20%C3%A0%20165%20000%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">18"</span></td>
+                            <td>~45 cm (bas du dos)</td>
+                            <td class="price-cell">192 500 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2018%22%20%C3%A0%20192%20500%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr class="popular-row">
+                            <td><span class="size-badge popular">20" ⭐</span></td>
+                            <td>~50 cm (taille)</td>
+                            <td class="price-cell">220 000 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2020%22%20%C3%A0%20220%20000%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">22"</span></td>
+                            <td>~55 cm (sous la taille)</td>
+                            <td class="price-cell">275 000 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2022%22%20%C3%A0%20275%20000%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr class="popular-row">
+                            <td><span class="size-badge popular">24" ⭐</span></td>
+                            <td>~60 cm (hanches)</td>
+                            <td class="price-cell">302 500 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2024%22%20%C3%A0%20302%20500%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">26"</span></td>
+                            <td>~65 cm (mi-cuisse)</td>
+                            <td class="price-cell">357 500 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2026%22%20%C3%A0%20357%20500%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">28"</span></td>
+                            <td>~70 cm (cuisse)</td>
+                            <td class="price-cell">412 500 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2028%22%20%C3%A0%20412%20500%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">30"</span></td>
+                            <td>~75 cm (genoux)</td>
+                            <td class="price-cell">467 500 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2030%22%20%C3%A0%20467%20500%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">32"</span></td>
+                            <td>~80 cm (sous genoux)</td>
+                            <td class="price-cell">522 500 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2032%22%20%C3%A0%20522%20500%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">34"</span></td>
+                            <td>~85 cm (mollets)</td>
+                            <td class="price-cell">605 000 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2034%22%20%C3%A0%20605%20000%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">36"</span></td>
+                            <td>~90 cm (chevilles)</td>
+                            <td class="price-cell">687 500 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2036%22%20%C3%A0%20687%20500%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="size-badge">38"</span></td>
+                            <td>~95 cm (sol)</td>
+                            <td class="price-cell">770 000 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2038%22%20%C3%A0%20770%20000%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                        <tr class="premium-row">
+                            <td><span class="size-badge premium">40"</span></td>
+                            <td>~100 cm (extra long)</td>
+                            <td class="price-cell premium-price">880 000 FCFA</td>
+                            <td><a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%2040%22%20%C3%A0%20880%20000%20FCFA" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- Payment Methods Section -->
+    <!-- ======================== MOYENS DE PAIEMENT ======================== -->
     <section class="payments" id="paiement">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-reveal">
                 <span class="section-tag">Paiement</span>
                 <h2>Moyens de <span class="highlight">paiement</span> acceptés</h2>
                 <p>Payez facilement et en toute sécurité via le moyen de votre choix</p>
             </div>
-            <div class="payments-grid">
+            <div class="payments-grid scroll-reveal">
                 <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20payer%20par%20Airtel%20Money" target="_blank" class="payment-card">
-                    <div class="payment-icon payment-icon-airtel"><i class="fas fa-mobile-screen-button"></i></div>
+                    <div class="payment-icon payment-icon-airtel">
+                        <img src="airtel-logo.png" alt="Airtel Money" class="payment-logo-img">
+                    </div>
                     <h4>Airtel Money</h4>
                     <p class="payment-value">077 24 40 83</p>
                     <p class="payment-note">Paiement mobile rapide et sécurisé</p>
+                    <div class="payment-steps">
+                        <small>1. Ouvrez Airtel Money</small>
+                        <small>2. Envoyez au 077 24 40 83</small>
+                        <small>3. Envoyez la capture sur WhatsApp</small>
+                    </div>
                 </a>
                 <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20payer%20par%20Moov%20Money%20(Mobicash)" target="_blank" class="payment-card">
-                    <div class="payment-icon payment-icon-moov"><i class="fas fa-mobile-screen-button"></i></div>
+                    <div class="payment-icon payment-icon-moov">
+                        <img src="moov-logo.png" alt="Moov Money" class="payment-logo-img">
+                    </div>
                     <h4>Moov Money (Mobicash)</h4>
-                    <p class="payment-value">077 24 40 83</p>
+                    <p class="payment-value">060 180 850</p>
                     <p class="payment-note">Paiement mobile rapide et sécurisé</p>
+                    <div class="payment-steps">
+                        <small>1. Ouvrez Moov Money</small>
+                        <small>2. Envoyez au 060 180 850</small>
+                        <small>3. Envoyez la capture sur WhatsApp</small>
+                    </div>
                 </a>
                 <a href="https://www.paypal.me/gracejourdain" target="_blank" class="payment-card">
-                    <div class="payment-icon payment-icon-paypal"><i class="fab fa-paypal"></i></div>
+                    <div class="payment-icon payment-icon-paypal">
+                        <i class="fab fa-paypal"></i>
+                    </div>
                     <h4>PayPal</h4>
-                    <p class="payment-value">gracejourdain</p>
+                    <p class="payment-value">paypal.me/gracejourdain</p>
                     <p class="payment-note">Idéal pour les paiements internationaux</p>
+                    <div class="payment-steps">
+                        <small>1. Cliquez sur le lien PayPal</small>
+                        <small>2. Entrez le montant en FCFA</small>
+                        <small>3. Confirmez le paiement</small>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- ======================== À PROPOS ======================== -->
+    <section class="about" id="apropos">
+        <div class="container">
+            <div class="about-container scroll-reveal">
+                <div class="about-image">
+                    <img src="charlyz-hair-logo.png" alt="Charlyz Hair by GraceMJ">
+                    <div class="about-image-badge">
+                        <span>Depuis 2023</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">À Propos</span>
+                    <h2>Charlyz Hair <span class="highlight">by GraceMJ</span></h2>
+                    <p class="about-tagline"> Révèle ta couronne </p>
+                    <p>
+                        Bienvenue chez <strong>Charlyz Hair</strong>, votre boutique de perruques de qualité supérieure 
+                        basée à <strong>Franceville, Gabon</strong>. Nous sélectionnons avec soin les plus belles 
+                        perruques — cheveux naturels, synthétiques, Lace Front et Full Lace — pour sublimer 
+                        votre beauté naturelle.
+                    </p>
+                    <p>
+                        Chaque perruque est choisie pour sa qualité, son confort et son rendu naturel. 
+                        Notre mission : vous offrir la perruque parfaite qui vous donne confiance et élégance 
+                        au quotidien.
+                    </p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <i class="fas fa-gem"></i>
+                            <div>
+                                <h4>Qualité Premium</h4>
+                                <p>Perruques soigneusement sélectionnées</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-truck-fast"></i>
+                            <div>
+                                <h4>Livraison Rapide</h4>
+                                <p>Livrée à Franceville et environs</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h4>Service Client</h4>
+                                <p>Conseils personnalisés sur WhatsApp</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-shield-halved"></i>
+                            <div>
+                                <h4>Paiement Sécurisé</h4>
+                                <p>Airtel Money, Moov Money, PayPal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== TÉMOIGNAGES ======================== -->
+    <section class="testimonials" id="temoignages">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Avis Clients</span>
+                <h2>Ce que disent nos <span class="highlight">clientes</span></h2>
+            </div>
+            <div class="testimonials-slider scroll-reveal" id="testimonials-slider">
+                <div class="testimonial-track" id="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"J'ai commandé une perruque Lace Front 24 pouces, elle est magnifique ! Le rendu est très naturel et la qualité est au top. Merci Charlyz Hair !"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">M</div>
+                            <div>
+                                <h5>Marie N.</h5>
+                                <span>Franceville</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Service rapide et perruque de qualité. Le paiement par Airtel Money est très pratique. Je recommande à 100% !"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">S</div>
+                            <div>
+                                <h5>Sandra O.</h5>
+                                <span>Franceville</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"Ma perruque Full Lace est parfaite ! Elle est confortable et le rendu est incroyable. GraceMJ est très professionnelle et à l'écoute."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">A</div>
+                            <div>
+                                <h5>Aïcha B.</h5>
+                                <span>Moanda</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Première fois que je commande en ligne au Gabon et tout s'est très bien passé. La perruque est sublime, je suis ravie !"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">C</div>
+                            <div>
+                                <h5>Christelle M.</h5>
+                                <span>Franceville</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn" id="prevTestimonial" aria-label="Précédent">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonial-dots" id="testimonial-dots"></div>
+                    <button class="testimonial-btn" id="nextTestimonial" aria-label="Suivant">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CTA SECTION ======================== -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-box">
+            <div class="cta-box scroll-reveal">
                 <div class="cta-content">
-                    <h2>Prêt à booster votre carrière ?</h2>
-                    <p>Contactez-moi dès maintenant et obtenez un CV professionnel qui vous démarque !</p>
+                    <h2>Prête à révéler ta <span class="highlight">couronne</span> ?</h2>
+                    <p>Contactez-nous dès maintenant et trouvez la perruque parfaite pour vous !</p>
                 </div>
                 <div class="cta-actions">
-                    <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20am%C3%A9liorer%20mon%20CV" class="btn btn-primary btn-lg" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque" class="btn btn-primary btn-lg" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
                     </a>
-                    <a href="tel:+24177244083" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-phone"></i> Appeler
+                    <a href="#boutique" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-gem"></i> Voir la boutique
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ======================== CONTACT ======================== -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-reveal">
                 <span class="section-tag">Contact</span>
-                <h2>Contactez-moi <span class="highlight">dès maintenant</span> !</h2>
+                <h2>Contactez-nous <span class="highlight">maintenant</span></h2>
             </div>
-            <div class="contact-grid">
-                <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20am%C3%A9liorer%20mon%20CV" class="contact-card whatsapp" target="_blank">
+            <div class="contact-grid scroll-reveal">
+                <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque" class="contact-card whatsapp" target="_blank">
                     <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-                    <h4>Sur WhatsApp</h4>
+                    <h4>WhatsApp</h4>
                     <p class="contact-value">077 24 40 83</p>
-                    <p class="contact-note">Réponse rapide et efficace ✅</p>
+                    <p class="contact-note">Réponse rapide et efficace</p>
                 </a>
                 <a href="tel:+24177244083" class="contact-card phone">
                     <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                    <h4>Par Appel</h4>
+                    <h4>Appel Direct</h4>
                     <p class="contact-value">077 24 40 83</p>
-                    <p class="contact-note">Appel direct pour échanger ✅</p>
+                    <p class="contact-note">Appelez-nous directement</p>
                 </a>
                 <a href="mailto:gracemjdjibril@gmail.com" class="contact-card email">
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <h4>Par Email</h4>
+                    <h4>Email</h4>
                     <p class="contact-value">gracemjdjibril@gmail.com</p>
-                    <p class="contact-note">Vos données sont 100% confidentielles 🔒</p>
+                    <p class="contact-note">Nous répondons sous 24h</p>
                 </a>
+                <div class="contact-card location">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h4>Localisation</h4>
+                    <p class="contact-value">Franceville, Gabon</p>
+                    <p class="contact-note">Livraison locale disponible</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ======================== FOOTER ======================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="GRACEMJ" class="footer-logo-img">
-                        <span class="logo-text">GRACE<span class="highlight">MJ</span></span>
+                    <div class="footer-logos">
+                        <img src="charlyz-hair-logo.png" alt="Charlyz Hair" class="footer-logo-img">
+                        <div>
+                            <span class="logo-text">CHARLYZ<span class="highlight"> HAIR</span></span>
+                            <p class="footer-tagline">Révèle ta couronne</p>
+                        </div>
                     </div>
-                    <p>Votre partenaire pour un CV professionnel qui ouvre les portes du succès.</p>
+                    <p>Votre boutique de perruques de qualité à Franceville, Gabon. Des perruques pour toutes les femmes, toutes les occasions.</p>
                     <div class="footer-payments">
                         <span class="footer-payments-label">Paiement accepté :</span>
                         <div class="footer-payments-icons">
@@ -463,25 +709,137 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-links">
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
                     <a href="#accueil">Accueil</a>
-                    <a href="#services">Services</a>
+                    <a href="#boutique">Boutique</a>
                     <a href="#tarifs">Tarifs</a>
                     <a href="#paiement">Paiement</a>
+                    <a href="#apropos">À Propos</a>
                     <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-categories">
+                    <h4>Catégories</h4>
+                    <a href="#boutique" data-filter="naturel">Cheveux Naturels</a>
+                    <a href="#boutique" data-filter="synthetique">Synthétiques</a>
+                    <a href="#boutique" data-filter="lace-front">Lace Front</a>
+                    <a href="#boutique" data-filter="full-lace">Full Lace</a>
+                    <a href="#boutique" data-filter="ondule">Ondulées</a>
+                    <a href="#boutique" data-filter="lisse">Lisses</a>
+                </div>
+                <div class="footer-contact-info">
+                    <h4>Contact</h4>
+                    <a href="https://wa.me/24177244083" target="_blank"><i class="fab fa-whatsapp"></i> 077 24 40 83</a>
+                    <a href="mailto:gracemjdjibril@gmail.com"><i class="fas fa-envelope"></i> gracemjdjibril@gmail.com</a>
+                    <a href="https://www.paypal.me/gracejourdain" target="_blank"><i class="fab fa-paypal"></i> PayPal</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Franceville, Gabon</span>
+                    <a href="https://gracemj92.github.io/gracemjcv/" target="_blank" class="footer-blog-link"><i class="fas fa-blog"></i> Notre Blog</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 GRACEMJ — Tous droits réservés</p>
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Charlyz Hair by GraceMJ — Tous droits réservés</p>
+                    <div class="footer-bottom-logos">
+                        <span><i class="fas fa-heart"></i> Conçu avec soin par GraceMJ</span>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20am%C3%A9liorer%20mon%20CV" class="whatsapp-float" target="_blank" aria-label="Contactez-nous sur WhatsApp">
+    <!-- ======================== PRODUCT MODAL ======================== -->
+    <div class="product-modal" id="product-modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Fermer">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-product-image" src="" alt="Produit">
+                </div>
+                <div class="modal-details">
+                    <span class="modal-category" id="modal-category"></span>
+                    <h2 id="modal-product-name"></h2>
+                    <p class="modal-description" id="modal-description"></p>
+                    <div class="modal-price" id="modal-price"></div>
+                    <div class="modal-size">
+                        <span class="modal-label">Taille :</span>
+                        <span id="modal-size" class="size-badge"></span>
+                    </div>
+                    <div class="modal-colors">
+                        <span class="modal-label">Couleurs disponibles :</span>
+                        <div class="color-options" id="modal-colors"></div>
+                    </div>
+                    <div class="modal-quantity">
+                        <span class="modal-label">Quantité :</span>
+                        <div class="quantity-control">
+                            <button class="qty-btn" id="qty-minus">−</button>
+                            <input type="number" id="modal-quantity" value="1" min="1" max="10">
+                            <button class="qty-btn" id="qty-plus">+</button>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary btn-lg" id="modal-add-cart">
+                            <i class="fas fa-shopping-bag"></i> Ajouter au panier
+                        </button>
+                        <a href="#" class="btn btn-whatsapp btn-lg" id="modal-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== CART SIDEBAR ======================== -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Mon Panier</h3>
+            <button class="cart-close" id="cart-close" aria-label="Fermer le panier">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items rendered by JavaScript -->
+        </div>
+        <div class="cart-empty" id="cart-empty">
+            <i class="fas fa-shopping-bag"></i>
+            <p>Votre panier est vide</p>
+            <a href="#boutique" class="btn btn-outline" id="cart-shop-btn">Voir la boutique</a>
+        </div>
+        <div class="cart-footer" id="cart-footer">
+            <div class="cart-total">
+                <span>Total :</span>
+                <span class="cart-total-price" id="cart-total">0 FCFA</span>
+            </div>
+            <button class="btn btn-whatsapp btn-block" id="cart-checkout">
+                <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+            </button>
+            <button class="btn btn-outline btn-block btn-sm" id="cart-clear">
+                <i class="fas fa-trash"></i> Vider le panier
+            </button>
+        </div>
+    </div>
+
+    <!-- ======================== TOAST NOTIFICATION ======================== -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Ajouté au panier !</span>
+    </div>
+
+    <!-- ======================== BACK TO TOP ======================== -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ======================== WHATSAPP FLOAT ======================== -->
+    <a href="https://wa.me/24177244083?text=Bonjour%2C%20je%20souhaite%20commander%20une%20perruque%20Charlyz%20Hair" class="whatsapp-float" target="_blank" aria-label="Contactez-nous sur WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
