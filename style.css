@@ -1308,10 +1308,11 @@ section { padding: var(--spacing-xxxl) 0; }
     border-top: 1px solid var(--gray-200);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
 }
-.cart-total { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: var(--spacing-sm); }
+.cart-total { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 0; }
 .cart-total-price { color: var(--primary-accent); }
+#cart-clear { margin-top: var(--spacing-xs); }
 
 /* ==========================================================================
    18. ÉLÉMENTS FLOTTANTS
