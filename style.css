@@ -11,16 +11,16 @@
    01. CSS Reset & Variables
    ========================================================================== */
 :root {
-    /* Color Palette — Beige élégant (remplace l'ancien rouge foncé) */
+    /* Color Palette â Beige Ã©lÃ©gant (remplace l'ancien rouge foncÃ©) */
     --primary-dark: #2b241c;         /* brun profond, remplace le rouge/noir d'origine */
-    --primary-accent: #a9895f;       /* beige-bronze propre — accent principal du site */
+    --primary-accent: #a9895f;       /* beige-bronze propre â accent principal du site */
     --primary-accent-light: #c2a684;
     --primary-accent-dark: #8a6c47;
     --secondary-accent: #d4a234; /* Gold */
     --secondary-accent-light: #ebd08d;
     --secondary-accent-dark: #a87e22;
     --light-gold: #e8c068;
-    --beige-pale: #f3ead9;           /* beige très clair pour fonds/panneaux */
+    --beige-pale: #f3ead9;           /* beige trÃ¨s clair pour fonds/panneaux */
     
     /* Grays & Neutrals */
     --white: #ffffff;
@@ -2026,7 +2026,7 @@ section {
 
 /* ==========================================================================
    CORRECTIONS & COMPOSANTS MANQUANTS
-   Ajouté pour que le CSS corresponde exactement à index.html et script.js
+   AjoutÃ© pour que le CSS corresponde exactement Ã  index.html et script.js
    ========================================================================== */
 
 html { scroll-behavior: smooth; }
@@ -2205,7 +2205,7 @@ body.no-scroll { overflow: hidden; }
     background: linear-gradient(160deg, var(--beige-pale) 0%, #e6d6b8 100%);
     overflow: hidden;
 }
-/* Coups de pinceau décoratifs derrière le logo */
+/* Coups de pinceau dÃ©coratifs derriÃ¨re le logo */
 .hero-logo-panel::before,
 .hero-logo-panel::after {
     content: '';
@@ -2286,17 +2286,19 @@ body.no-scroll { overflow: hidden; }
 .categories { padding: var(--spacing-xxxl) 0; background-color: var(--gray-50); }
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
 }
 .category-card {
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 4;
     cursor: pointer;
     box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
+.category-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
 .category-card:hover img { transform: scale(1.08); }
 .category-overlay {
@@ -2309,20 +2311,59 @@ body.no-scroll { overflow: hidden; }
 .category-overlay h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 2px; }
 .category-overlay p { font-size: 0.75rem; color: var(--gray-200); }
 
+/* ---------- GALERIE MÃDIA (s'assurer que tout reste visible) ---------- */
+.media-gallery { display: block; padding: var(--spacing-xxxl) 0; background-color: var(--white); }
+.media-gallery-grid {
+    display: grid !important;
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: stretch;
+    min-height: 320px;
+}
+.media-photo {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    min-height: 320px;
+    display: block;
+}
+.media-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.media-videos {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+}
+.media-video {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background-color: var(--gray-900, #111);
+    aspect-ratio: 9 / 16;
+    min-height: 200px;
+    display: block;
+}
+.media-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
 /* ---------- BOUTIQUE / FILTRES ---------- */
 .shop { padding: var(--spacing-xxxl) 0; }
 .filters-bar {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--spacing-lg);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
     padding: var(--spacing-lg);
     background-color: var(--gray-50);
     border-radius: var(--radius-lg);
 }
-.filter-group { display: flex; flex-wrap: wrap; gap: var(--spacing-lg); }
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    width: 100%;
+    justify-content: center;
+}
 .filter-item { display: flex; flex-direction: column; gap: 4px; }
 .filter-item label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--gray-600); }
 .filter-item select {
@@ -2331,19 +2372,32 @@ body.no-scroll { overflow: hidden; }
     border-radius: var(--radius-sm);
     background-color: var(--white);
     font-family: var(--font-body);
-    min-width: 160px;
+    width: 100%;
+    min-width: 0;
+}
+/* CatÃ©gorie : pleine largeur (comme la barre de recherche) */
+.filter-item:nth-child(1) {
+    flex: 1 1 100%;
+}
+/* Taille et Trier par : sur la mÃªme ligne (50% chacun) */
+.filter-item:nth-child(2),
+.filter-item:nth-child(3) {
+    flex: 1 1 calc(50% - var(--spacing-md));
+    min-width: 0;
 }
 .filter-search {
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
 }
-.filter-search i { position: absolute; left: 12px; color: var(--gray-400); }
+.filter-search i { position: absolute; left: 12px; color: var(--gray-400); z-index: 1; }
 .filter-search input {
     padding: 0.6rem 1rem 0.6rem 2.2rem;
     border: 1px solid var(--gray-300);
     border-radius: var(--radius-full);
-    min-width: 240px;
+    width: 100%;
+    min-width: 0;
     font-family: var(--font-body);
 }
 .products-grid {
@@ -2370,6 +2424,24 @@ body.no-scroll { overflow: hidden; }
 .popular-row { background-color: rgba(212, 162, 52, 0.06); }
 .premium-row { background-color: rgba(169, 137, 95, 0.08); }
 .premium-price { color: var(--primary-accent); font-weight: 800; }
+/* Centrer les icÃ´nes WhatsApp dans le tableau des tarifs */
+.price-table td:last-child,
+.price-table th:last-child {
+    text-align: center;
+}
+.price-table td a,
+.price-table td i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.price-table .whatsapp-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--whatsapp);
+    font-size: 1.2rem;
+}
 
 /* ---------- PAIEMENT ---------- */
 .payments { padding: var(--spacing-xxxl) 0; }
@@ -2396,7 +2468,7 @@ body.no-scroll { overflow: hidden; }
 .payment-icon-moov { color: var(--moov-blue); }
 .payment-icon-paypal { color: var(--paypal-blue); }
 
-/* ---------- À PROPOS ---------- */
+/* ---------- Ã PROPOS ---------- */
 .about { padding: var(--spacing-xxxl) 0; background-color: var(--white); }
 .about-container {
     display: grid;
@@ -2423,7 +2495,7 @@ body.no-scroll { overflow: hidden; }
 .value-item h4 { font-size: 0.95rem; margin-bottom: 2px; color: var(--primary-dark); }
 .value-item p { font-size: 0.8rem; color: var(--gray-500); margin: 0; }
 
-/* ---------- TÉMOIGNAGES ---------- */
+/* ---------- TÃMOIGNAGES ---------- */
 .testimonials { padding: var(--spacing-xxxl) 0; background-color: var(--gray-50); }
 .testimonials-slider { max-width: 720px; margin: 0 auto; position: relative; overflow: hidden; }
 .testimonial-track {
@@ -2576,7 +2648,7 @@ body.no-scroll { overflow: hidden; }
 .footer-bottom-logos { display: flex; align-items: center; gap: var(--spacing-xs); }
 .footer-gracemj-logo { height: 20px; width: auto; border-radius: 4px; }
 
-/* ---------- MODALE PRODUIT (correction structure réelle du HTML) ----------
+/* ---------- MODALE PRODUIT (correction structure rÃ©elle du HTML) ----------
    Dans index.html, #product-modal est le conteneur englobant qui contient
    #modal-overlay (fond sombre) ET .modal-content (carte visible) comme
    enfants. Le CSS d'origine supposait l'inverse : on corrige ici. */
@@ -2662,44 +2734,7 @@ body.no-scroll { overflow: hidden; }
 .cart-total { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: var(--spacing-sm); }
 .cart-total-price { color: var(--primary-accent); }
 
-/* ---------- GALERIE MÉDIA ---------- */
-.media-gallery { padding: var(--spacing-xxxl) 0; background-color: var(--white); }
-.media-gallery-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: var(--spacing-lg);
-    align-items: stretch;
-}
-.media-photo {
-    position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    min-height: 320px;
-}
-.media-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.media-caption {
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    padding: var(--spacing-md) var(--spacing-lg);
-    background: linear-gradient(to top, rgba(43, 36, 28, 0.85) 0%, rgba(43, 36, 28, 0) 100%);
-    color: var(--white);
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-.media-videos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-}
-.media-video {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    background-color: var(--gray-900, #111);
-    aspect-ratio: 9 / 16;
-}
-.media-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* (La section GALERIE MÃDIA est dÃ©jÃ  dÃ©finie plus haut avec les corrections d'affichage) */
 
 /* ---------- CURSEURS INTERACTIFS ---------- */
 .product-img-wrapper, .product-title, .category-card { cursor: pointer; }
@@ -2709,9 +2744,9 @@ body.no-scroll { overflow: hidden; }
 .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ---------- RESPONSIVE ---------- */
-/* On bascule en mode "téléphone" (menu déroulant + une seule colonne partout)
-   dès 1024px, pour ne jamais laisser de zone intermédiaire où le menu
-   déborde et où les grilles restent en 2-3 colonnes trop serrées. */
+/* On bascule en mode "tÃ©lÃ©phone" (menu dÃ©roulant + une seule colonne partout)
+   dÃ¨s 1024px, pour ne jamais laisser de zone intermÃ©diaire oÃ¹ le menu
+   dÃ©borde et oÃ¹ les grilles restent en 2-3 colonnes trop serrÃ©es. */
 @media (max-width: 1024px) {
     .hero-container { grid-template-columns: 1fr; text-align: center; }
     .hero-trust { flex-direction: column; align-items: center; gap: var(--spacing-sm); }
@@ -2760,21 +2795,24 @@ body.no-scroll { overflow: hidden; }
 }
 
 @media (max-width: 480px) {
-    .categories-grid { grid-template-columns: 1fr; }
+    .hero-logo-panel { height: 260px; }
 }
 
+/* (Les rÃ¨gles pour categories-grid, price-table et testimonials Ã  480px
+   sont dÃ©finies plus bas dans la section CORRECTIONS RESPONSIVE APPROFONDIES) */
+
 /* ==========================================================================
-   CORRECTIONS RESPONSIVE APPROFONDIES (mobile réel)
+   CORRECTIONS RESPONSIVE APPROFONDIES (mobile rÃ©el)
    ========================================================================== */
 
-/* Toutes les images et vidéos sont fluides par défaut */
+/* Toutes les images et vidÃ©os sont fluides par dÃ©faut */
 img, video { max-width: 100%; height: auto; display: block; }
 
-/* Garde-fou : aucun débordement horizontal nulle part (fin du "glisser") */
+/* Garde-fou : aucun dÃ©bordement horizontal nulle part (fin du "glisser") */
 html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
 
-/* Les enfants de grille/flex ne doivent jamais forcer leur conteneur à
-   s'élargir à cause de leur contenu (vidéos, texte long, etc.) */
+/* Les enfants de grille/flex ne doivent jamais forcer leur conteneur Ã 
+   s'Ã©largir Ã  cause de leur contenu (vidÃ©os, texte long, etc.) */
 .products-grid > *, .categories-grid > *, .media-videos > *,
 .payments-grid > *, .contact-grid > *, .footer-content > *,
 .hero-highlights > *, .about-values > * {
@@ -2786,7 +2824,7 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     .container { padding: 0 var(--spacing-md); }
     section { padding: var(--spacing-xl) 0; }
 
-    /* Textes centrés partout en mode téléphone */
+    /* Textes centrÃ©s partout en mode tÃ©lÃ©phone */
     .section-header, .about-content, .payment-card, .contact-card,
     .footer-brand, .value-item { text-align: center; }
     .value-item { flex-direction: column; align-items: center; }
@@ -2813,7 +2851,7 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     .hero-highlight-item { font-size: 0.68rem; flex: 1 1 30%; }
     .hero-highlight-item i { font-size: 1.1rem; }
 
-    /* Sections génériques */
+    /* Sections gÃ©nÃ©riques */
     .section-header { margin-bottom: var(--spacing-lg); }
     .section-header h2 { font-size: 1.6rem; }
     .section-subtitle { font-size: 0.9rem; }
@@ -2823,15 +2861,64 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     .product-title { font-size: 0.95rem; }
     .product-price { font-size: 1.1rem; }
 
-    /* Tarifs : la table défile horizontalement, on l'indique visuellement */
-    .price-table-container { -webkit-overflow-scrolling: touch; }
-    .price-table th, .price-table td { padding: 0.6rem 0.5rem; font-size: 0.8rem; white-space: nowrap; }
+    /* Tarifs : police fine, petit, tout le tableau tient Ã  l'Ã©cran */
+    .price-table-container { -webkit-overflow-scrolling: touch; overflow-x: auto; }
+    .price-table { font-weight: 300; }
+    .price-table th {
+        padding: 0.5rem 0.3rem;
+        font-size: 0.65rem;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+    }
+    .price-table td {
+        padding: 0.4rem 0.3rem;
+        font-size: 0.68rem;
+        font-weight: 300;
+        white-space: nowrap;
+    }
+    .price-table .size-badge { font-size: 0.65rem; padding: 0.15rem 0.4rem; }
+    .price-table td a, .price-table td i { font-size: 1rem; }
 
-    /* À propos */
+    /* TÃ©moignages : s'adaptent pleinement Ã  l'Ã©cran mobile */
+    .testimonials-slider { max-width: 100%; margin: 0; padding: 0 var(--spacing-sm); }
+    .testimonial-track { width: 100%; }
+    .testimonial-card {
+        min-width: 100%;
+        max-width: 100%;
+        padding: var(--spacing-md);
+        box-sizing: border-box;
+    }
+    .testimonial-text { font-size: 0.9rem; line-height: 1.6; }
+    .testimonial-stars { font-size: 0.95rem; }
+    .testimonial-author { flex-wrap: wrap; gap: var(--spacing-xs); }
+    .testimonial-author h5 { font-size: 0.85rem; }
+    .testimonial-author span { font-size: 0.7rem; }
+    .testimonial-controls { gap: var(--spacing-sm); }
+    .testimonial-btn { width: 32px; height: 32px; }
+
+    /* Galerie mÃ©dia : visible mÃªme sur petit Ã©cran */
+    .media-gallery-grid { grid-template-columns: 1fr !important; min-height: auto; }
+    .media-photo { min-height: 220px; }
+    .media-videos { grid-template-columns: repeat(2, 1fr) !important; gap: var(--spacing-sm); }
+    .media-video { min-height: 160px; }
+    .media-caption { font-size: 0.8rem; padding: var(--spacing-sm) var(--spacing-md); }
+
+    /* Filtres boutique : centrÃ©s, catÃ©gorie pleine largeur, taille+tri mÃªme ligne */
+    .filters-bar { flex-direction: column; align-items: stretch; padding: var(--spacing-md); gap: var(--spacing-sm); }
+    .filter-group { width: 100%; flex-direction: row; flex-wrap: wrap; gap: var(--spacing-sm); }
+    .filter-item { width: 100%; }
+    .filter-item:nth-child(1) { flex: 1 1 100%; }
+    .filter-item:nth-child(2), .filter-item:nth-child(3) { flex: 1 1 calc(50% - var(--spacing-sm)); min-width: 0; }
+    .filter-item select { width: 100%; min-width: 0; font-size: 0.85rem; }
+    .filter-search { width: 100%; }
+    .filter-search input { width: 100%; min-width: 0; font-size: 0.85rem; }
+
+    /* Ã propos */
     .about-image-badge { padding: 0.5rem 1rem; font-size: 0.85rem; }
     .about-values { grid-template-columns: 1fr; gap: var(--spacing-md); }
 
-    /* Galerie média */
+    /* Galerie mÃ©dia */
     .media-photo { min-height: 220px; }
     .media-videos { gap: var(--spacing-sm); }
 
@@ -2843,16 +2930,16 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     /* Contact */
     .contact-card { padding: var(--spacing-md); }
 
-    /* Modale produit : plein écran sur mobile */
+    /* Modale produit : plein Ã©cran sur mobile */
     .modal-content { width: 96%; max-height: 94vh; }
     .modal-body { padding: var(--spacing-md); gap: var(--spacing-md); text-align: center; }
     .modal-image { max-height: 260px; }
     .modal-size, .modal-colors, .modal-quantity { justify-content: center; }
 
-    /* Panier : plein écran */
+    /* Panier : plein Ã©cran */
     .cart-sidebar { max-width: 100%; }
 
-    /* Éléments flottants : plus petits, ne se chevauchent pas */
+    /* ÃlÃ©ments flottants : plus petits, ne se chevauchent pas */
     .whatsapp-float { width: 50px; height: 50px; font-size: 1.5rem; bottom: 20px; right: 16px; }
     .back-to-top { width: 38px; height: 38px; font-size: 1rem; bottom: 78px; right: 16px; }
     .toast { left: 16px; right: 16px; max-width: none; bottom: 20px; }
@@ -2864,4 +2951,30 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     .footer-content { text-align: center; }
     .footer-nav, .footer-categories, .footer-contact-info { align-items: center; }
     .footer-bottom-content { flex-direction: column; text-align: center; }
+
+    /* Tableau des tarifs : encore plus petit pour tenir Ã  l'Ã©cran */
+    .price-table th {
+        padding: 0.35rem 0.2rem;
+        font-size: 0.58rem;
+        font-weight: 400;
+    }
+    .price-table td {
+        padding: 0.3rem 0.2rem;
+        font-size: 0.6rem;
+        font-weight: 300;
+    }
+    .price-table .size-badge { font-size: 0.55rem; padding: 0.1rem 0.3rem; }
+    .price-table td a, .price-table td i { font-size: 0.9rem; }
+
+    /* TÃ©moignages : compacts sur trÃ¨s petit Ã©cran */
+    .testimonial-card { padding: var(--spacing-sm); }
+    .testimonial-text { font-size: 0.82rem; line-height: 1.5; }
+    .testimonial-author h5 { font-size: 0.8rem; }
+
+    /* CatÃ©gories : une par ligne sur trÃ¨s petit Ã©cran */
+    .categories-grid { grid-template-columns: 1fr 1fr; gap: var(--spacing-sm); }
+
+    /* Galerie mÃ©dia : vidÃ©os en colonne unique */
+    .media-videos { grid-template-columns: 1fr !important; }
+    .media-video { min-height: 200px; }
 }
