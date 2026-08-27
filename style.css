@@ -2798,7 +2798,8 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     .nav-container { gap: var(--spacing-sm); }
 
     /* Hero */
-    .hero { padding-top: 80px; }
+    .hero { padding-top: 110px; }
+    .hero-visual { margin-top: var(--spacing-md); }
     .hero-container { gap: var(--spacing-lg); }
     .hero-content h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
     .hero-subtitle { font-size: 0.95rem; max-width: 100%; margin-left: auto; margin-right: auto; }
@@ -2806,7 +2807,7 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
     .hero-cta .btn { width: 100%; justify-content: center; }
     .hero-trust { gap: var(--spacing-sm); }
     .hero-logo-panel { height: 320px; }
-    .hero-logo-img { max-width: 70%; max-height: 70%; }
+    .hero-logo-img { max-width: 58%; max-height: 56%; }
     .hero-float-badge { padding: 6px 10px; font-size: 0.75rem; }
     .hero-highlights { flex-wrap: wrap; padding: var(--spacing-md); }
     .hero-highlight-item { font-size: 0.68rem; flex: 1 1 30%; }
